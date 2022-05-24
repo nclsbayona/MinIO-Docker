@@ -43,6 +43,8 @@ var minioAccessKeyID *string = flag.String("k", "", "MinIO Access Key ID")
 var minioKeySecret *string = flag.String("s", "", "MinIO Access Key Secret")
 var minioserverURL *string = flag.String("u", "","MinIO Server URL, default (localhost:9000)")
 
+// It takes a writer, a minio access key, a minio secret key, and a minio server URL, and it lists all
+// the buckets on the minio server
 func main() {
 	flag.Parse()
 	listMIOBuckets(os.Stdout, *minioAccessKeyID, *minioKeySecret, *minioserverURL)
